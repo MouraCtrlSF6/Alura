@@ -10,6 +10,16 @@ public and src folders with it's repectives files
 npx create-react-app <app_name>
 ```
 
+## Run app
+
+```sh 
+yarn start
+```
+OR
+```sh 
+npm start
+```
+
 ### Procedures
 
 - [x] Remove all files form src folder, except for App.js, index.css and index.js
