@@ -20,6 +20,9 @@ npm install
 
 - [x] Remove all files form src folder, except for App.js, index.css and index.js
 - [x] Create a new folder called components
+- [x] Create a new folder called assets
+- [x] Move index.css to assets
+- [x] Create App.css file  
 
 #### Notes
 
