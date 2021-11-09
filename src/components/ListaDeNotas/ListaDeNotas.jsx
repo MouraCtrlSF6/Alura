@@ -1,7 +1,38 @@
 import React from 'react';
-import CardNota from  './CardNota/CardNota'
-
+import CardNota from  '../CardNota'
+import './ListaDeNotas.css'
 class ListaDeNotas extends React.Component {
+  constructor(props) {
+    super(props)
+    this.notesArray = this.props.notes
+    this.colors = [
+      {
+        textColor: 'white',
+        backgroundColor: '#ec9706'
+      },
+      {
+        textColor: 'white',
+        backgroundColor: '#98b4d4'
+      },
+      {
+        textColor: 'white',
+        backgroundColor: '#ff6961'
+      },
+      {
+        textColor: 'black',
+        backgroundColor: '#fdfd96'
+      },
+      {
+        textColor: 'white',
+        backgroundColor: '#03bb85'
+      }
+    ]
+  }
+  getIndex(index) {
+    const a =  index / ( this.colors.length )
+    const b = a - parseInt(a)
+    return Math.round(b * ( this.colors.length ))
+  }
   render() {
     return (
       <div>
@@ -46,13 +77,15 @@ class ListaDeNotas extends React.Component {
 
         {
         //Assim dá:
-        <ul>
+        <ul className="list-container">
         {
-          ['Trabalho', 'Trabalho', 'Estudo'].map((item, index) => {
+          this.notesArray.map((note, index) => {
             return (
-              <li key={index}>
-                <div>{item}</div>
-                <CardNota />
+              <li 
+                key={index} 
+                className="list-item"
+              >
+                <CardNota note={note} color={this.colors[this.getIndex(index)]}/>
               </li>
             )
           })
